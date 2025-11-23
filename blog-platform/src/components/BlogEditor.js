@@ -13,7 +13,7 @@ function BlogEditor() {
 
   useEffect(() => {
     const blogs = JSON.parse(localStorage.getItem("blogs")) || [];
-    const found = blogs.find((b) => b.id == id);
+    const found = blogs.find((b) => b.id === id);
     if (found) {
       setBlog(found);
     }
@@ -21,7 +21,7 @@ function BlogEditor() {
 
   const updateBlog = () => {
     let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
-    blogs = blogs.map((b) => (b.id == id ? blog : b));
+    blogs = blogs.map((b) => (b.id === id ? blog : b));
     localStorage.setItem("blogs", JSON.stringify(blogs));
 
     alert("Blog Updated Successfully!");
